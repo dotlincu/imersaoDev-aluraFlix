@@ -6,6 +6,26 @@ let listaFilmes = [
     "https://br.web.img3.acsta.net/pictures/19/03/21/16/15/4239577.jpg"
 ];
 
-for (let index = 0; index < listaFilmes.length; index++) {
-    document.write("<img src=" + listaFilmes[index] + ">");
+document.getElementById("imagens").innerHTML = "";
+mostrar();
+
+function mostrar() {
+    for (let i = 0; i < listaFilmes.length; i++) {
+        // document.write("<img src=" + listaFilmes[index] + ">");
+        document.getElementById("imagens").innerHTML += "<img src=" + 
+            listaFilmes[i] + ">";
+    }
+}
+
+function adicionar() {
+    var link = document.getElementById("filme").value;
+    document.getElementById("imagens").innerHTML = "";
+
+    if(listaFilmes.includes(link)) {
+        alert("Filme já adicionado!");
+        mostrar();
+    } else {
+        listaFilmes.push(link);
+        mostrar();
+    }
 }
