@@ -28,4 +28,5 @@ function adicionar() {
         listaFilmes.push(link);
         mostrar();
     }
+    document.getElementById("filme").value = "";
 }
